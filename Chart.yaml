@@ -1,0 +1,8 @@
+apiVersion: v2
+description: Renovate test
+name: test-chart
+version: 0.0.1
+dependencies:
+  - name: "test-dependencies"
+    version: "1.0.6"
+    repository: "alias:artifactory"
