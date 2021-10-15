@@ -1,0 +1,53 @@
+{
+  "branchConcurrentLimit": 0,
+  "branchPrefix": "renovate-",
+  "branchTopic": "{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}_{{{newMinor}}}{{/if}}_x{{#if isLockfileUpdate}}-lockfile{{/if}}",
+  "dependencyDashboard": false,
+  "dryRun": true,
+  "enabledManagers": [
+    "helmfile",
+    "helmv3",
+    "docker",
+    "helm-values"
+  ],
+  "extends": [
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":updateNotScheduled",
+    ":automergeDisabled",
+    ":ignoreModulesAndTests",
+    "workarounds:all"
+  ],
+  "groupName": "version",
+  "groupSlug": "all",
+  "labels": [
+    "renovate"
+  ],
+  "onboarding": false,
+  "packageRules": [
+    {
+      "major": {
+        "enabled": true
+      },
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "docker.io"
+      ]
+    },
+    {
+      "groupName": "version",
+      "groupSlug": "all",
+      "matchPackagePatterns": [
+        "*"
+      ]
+    }
+  ],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "printConfig": false,
+  "requireConfig": false,
+  "separateMajorMinor": false,
+}
